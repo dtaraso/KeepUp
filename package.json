@@ -1,0 +1,16 @@
+{
+  "name": "KeepUp",
+  "version": "1.0.0",
+  "description": "CLI meant to create a to-do list and update it",
+  "main": "index.js",
+  "repository": "https://github.com/dtaraso/KeepUp",
+  "author": "Daria Tarasova",
+  "license": "MIT",
+  "preferGlobal": true,
+    "bin": "./task.js",
+  "dependencies": {
+    "commander": "^2.14.1",
+    "inquirer": "^5.1.0",
+    "mongoose": "^5.0.3"
+  }
+}
