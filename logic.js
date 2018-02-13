@@ -35,4 +35,32 @@ const getTask = (task) => {
   });
 };
 
-module.exports = { addTask, getTask };
+const updateTask = (_id, task) => {
+  Task.update({ _id }, task)
+  .exec((err, status) => {
+    assert.equal(null, err);
+    console.info('Updated successfully');
+    db.disconnect();
+  });
+};
+
+const deleteTask = (_id) => {
+  Task.remove({_id })
+  .exec((err, status) => {
+    assert.equal(null, err);
+    console.info('Deleted successfully');
+    db.disconnect();
+  });
+};
+
+const getToDoList = () => {
+  Task.find()
+  .exec((err, tasks) => {
+    assert.equal(null, err);
+    console.info(tasks);
+    console.info('${tasks.length} matches');
+    db.disconnect();
+  });
+};
+
+module.exports = { addTask, getTask, updateTask, deleteTask, getToDoList };
